@@ -1,0 +1,54 @@
+-------Hierarchical inheritance
+ means multiple child classes inherit from the same parent class.
+
+Real-world example
+Imagine a company:
+
+             Employee
+             /      \
+       Developer    Tester
+
+Both Developer and Tester are employees.
+
+----------Python code
+
+class Employee:
+    def work(self):
+        print("Employee is working")
+class Developer(Employee):
+    def code(self):
+        print("Developer writes code")
+class Tester(Employee):
+    def test(self):
+        print("Tester tests software")
+
+d = Developer()
+d.work()
+d.code()
+
+t = Tester()
+t.work()
+t.test()
+
+
+----------Output:
+
+Employee is working
+Developer writes code
+Employee is working
+Tester tests software
+
+---------------Structure
+
+          Employee
+          /      \
+    Developer    Tester
+
+Employee → Parent class
+Developer → Child class
+Tester → Child class
+
+Both children inherit from the same parent
+
+----------------Simple definition
+Hierarchical inheritance = One parent class → Multiple child classes.

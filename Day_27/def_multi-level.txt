@@ -1,0 +1,25 @@
+Multilevel inheritance means inheritance happens in multiple levels
+
+
+------------code:
+class Grandfather:
+    def house(self):
+        print("Grandfather's house")
+
+class Father(Grandfather):
+    def car(self):
+        print("Father's car")
+
+class Son(Father):
+    def bike(self):
+        print("Son's bike")
+
+s = Son()
+s.house()   # From Grandfather
+s.car()     # From Father
+s.bike()    # From Son
+
+-----------Output:
+Grandfather's house
+Father's car
+Son's bike

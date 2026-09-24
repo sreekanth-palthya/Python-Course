@@ -1,0 +1,54 @@
+----------------Method Overriding in Python
+
+Method overriding is a concept in inheritance where a child class 
+provides its own implementation of a method that is already defined in the parent class.
+
+----------------Why do we use overriding?
+
+We use method overriding when the child class
+needs to perform the same operation in a different way.
+
+------------code
+
+class Animal:
+    def sound(self):
+        print("Animal makes a sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+
+dog = Dog()
+dog.sound()
+
+------------output
+Dog barks
+
+
+
+-------If you still want to call the parent's version, you can use super():
+
+class Employee:
+    def work(self):
+        print("Employee is working")
+
+class Manager(Employee):
+    def work(self):
+        super().work()
+        print("Manager is managing the team")
+
+m = Manager()
+m.work()
+
+--------Output
+
+Employee is working
+Manager is managing the team
+
+-------How it works
+super().work()
+
+-------means:
+Call the work() method from the parent class.
+
+m.work()

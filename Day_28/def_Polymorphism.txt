@@ -1,0 +1,224 @@
+-------- What is Polymorphism?
+Polymorphism is an OOP concept that means: 
+           One name/interface can have many forms of behavior.
+
+-------The word comes from:
+Poly → Many
+Morph → Forms
+
+So:
+Polymorphism = Many forms
+
+-------Real-world example
+Consider the action "Pay".
+
+You can pay using:
+UPI       → Pay using UPI
+Credit Card → Pay using card
+Cash      → Pay using cash
+
+The action is the same: Pay
+But the implementation is different.
+
+
+---------Why Do We Use Polymorphism?
+The main purpose is to make code:
+Flexible
+Reusable
+Easier to maintain
+Easier to extend
+
+
+--------Simple Python Example
+
+class Dog:
+    def sound(self):
+        print("Bark")
+class Cat:
+    def sound(self):
+        print("Meow")
+
+dog = Dog()
+cat = Cat()
+dog.sound()
+cat.sound()
+
+------Output:
+Bark
+Meow
+
+
+--Both classes have the same method:
+sound()
+--But the behavior is different.
+Dog → sound() → Bark
+Cat → sound() → Meow
+
+This is polymorphism.
+
+
+-------------Polymorphism Through Method Overriding
+
+This is one of the most important forms of polymorphism in Python.
+
+class Animal:
+    def sound(self):
+        print("Animal makes sound")
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+class Cat(Animal):
+    def sound(self):
+        print("Cat meows")
+
+animals = [Dog(), Cat()]
+for animal in animals:
+    animal.sound()
+
+-------Output:
+Dog barks
+Cat meows
+
+-----Here:
+Animal
+   ↓
+sound()
+   ↓
+ ┌───────┐
+Dog     Cat
+ ↓       ↓
+Bark    Meow
+
+----The same:
+animal.sound()
+produces different results depending on the object.
+
+
+-----------Polymorphism with a Function
+The idea is:
+One function can work with different objects, and each object can behave differently.
+
+Example: Vehicles
+
+class Car:
+    def start(self):
+        print("Car starts with a key")
+class Bike:
+    def start(self):
+        print("Bike starts with a button")
+class Bus:
+    def start(self):
+        print("Bus starts with a switch")
+
+def start_vehicle(vehicle):
+    vehicle.start()
+
+car = Car()
+bike = Bike()
+bus = Bus()
+
+start_vehicle(car)
+start_vehicle(bike)
+start_vehicle(bus)
+
+
+----------Output
+Car starts with a key
+Bike starts with a button
+Bus starts with a switch
+
+
+--------------Method Overloading vs Polymorphism
+You just learned about overloading.
+Python doesn't have traditional method overloading like Java or C++.
+We can achieve similar behavior using default arguments.
+
+class Calculator:
+
+    def add(self, a, b=0, c=0):
+        return a + b + c
+
+c = Calculator()
+
+print(c.add(10))
+print(c.add(10, 20))
+print(c.add(10, 20, 30))
+
+-------Output:
+10
+30
+60
+
+----Same method:
+add()
+
+------Different inputs:
+add(10)
+add(10, 20)
+add(10, 20, 30)
+
+--This is often described as overloading-like behavior in Python.
+
+
+
+-------Polymorphism vs Overloading vs Overriding
+This is very important because these concepts can be confusing.
+
+---Concept	                     Meaning
+Polymorphism	          Same interface/name can have different behaviors
+Overloading	              Same method/operator handles different inputs
+Overriding	              Child class provides its own version of parent's method
+Operator overloading      Define how operators work with objects
+
+--------Example
+Overriding:
+
+class Dog(Animal):
+    def sound(self):
+        print("Bark")
+
+Child changes parent's method.
+
+--Overloading:
+def add(self, a, b=0):
+
+Same method handles different numbers of arguments.
+
+--Polymorphism:
+animal.sound()
+
+Different objects can respond differently to the same method call.
+
+------------Real-World Example
+Imagine an online payment system.
+
+class UPI:
+    def pay(self):
+        print("Payment through UPI")
+class Card:
+    def pay(self):
+        print("Payment through Card")
+class Cash:
+    def pay(self):
+        print("Payment through Cash")
+
+-------Now:
+
+def make_payment(method):
+    method.pay()
+
+make_payment(UPI())
+make_payment(Card())
+make_payment(Cash())
+
+------Output:
+Payment through UPI
+Payment through Card
+Payment through Cash
+
+---The function:
+make_payment()
+
+doesn't need separate code for every payment method.
+
+That's exactly where polymorphism becomes useful in real application

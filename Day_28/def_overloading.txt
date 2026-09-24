@@ -1,0 +1,75 @@
+--------------What is Overloading?
+Overloading means using the same method name for different purposes, 
+depending on the arguments given to it.
+
+-------------In simple words:
+One method name → can handle different types or numbers of inputs.
+
+---------Why do we use overloading?
+We use it when we want to perform a similar task 
+in different ways without creating different method names.
+
+----------Example
+
+class Calculator:
+    def add(self, a, b=0, c=0):
+        return a + b + c
+
+cal = Calculator()
+print(cal.add(10))
+print(cal.add(10, 20))
+print(cal.add(10, 20, 30))
+
+------Output:
+
+10
+30
+60
+
+
+
+
+----------Operator Overloading in Python
+
+Operator overloading means giving a special meaning to an operator 
+such as +, -, *, ==, etc., when it is used with objects of a class.
+
+---------Simple example
+
+class Student:
+    def __init__(self, marks):
+        self.marks = marks
+
+    def __add__(self, other):
+        return self.marks + other.marks
+
+s1 = Student(80)
+s2 = Student(70)
+
+print(s1 + s2)
+
+-------Output
+150
+
+--------How does it work?
+When Python sees:
+s1 + s2
+
+it internally calls:
+s1.__add__(s2)
+
+
+--------------Common operator overloading methods
+
+Operator	Special method
++	__add__()
+-	__sub__()
+*	__mul__()
+/	__truediv__()
+==	__eq__()
+>	__gt__()
+<	__lt__()
+Easy definition to remember
+
+Operator overloading is the ability to define how an operator behaves 
+when it is used with objects of a user-defined class.

@@ -1,0 +1,56 @@
+-----------What is a Constructor in Python?
+A constructor is a special method that is automatically 
+called when an object is created.
+
+------------In Python, the constructor is:
+__init__()
+
+--------Simple example
+
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+s1 = Student("Rahul", 20)
+
+print(s1.name)
+print(s1.age)
+
+-------Output:
+Rahul
+20
+
+----------What happens here?
+--When we write:
+s1 = Student("Rahul", 20)
+
+--Python automatically calls:
+__init__(self, name, age)
+
+--The values are stored:
+self.name = name
+self.age = age
+
+--So the object s1 contains:
+name = Rahul
+age = 20
+
+
+
+------------Why do we use a constructor?
+We mainly use a constructor to initialize an object's data when the object is created.
+
+---------For example:
+
+class Car:
+    def __init__(self, brand, price):
+        self.brand = brand
+        self.price = price
+
+--When creating the object:
+car1 = Car("Toyota", 1500000)
+
+--the constructor automatically initializes:
+brand → Toyota
+price → 1500000

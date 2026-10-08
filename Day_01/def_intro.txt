@@ -1,0 +1,22 @@
+-----------------what is python 
+Python is a high-level, general-purpose computer programming language 
+created by Guido van Rossum and released in 1991
+
+-----------------Why is Python popular?
+- Easy to learn — simple, readable syntax
+- Powerful — can build complex applications
+- Versatile — web development, AI, data science, automation, etc.
+- Large library ecosystem — many ready-made tools
+- Cross-platform — works on Windows, Linux, and macOS
+
+
+-----------------Why Learn Python?
+-Requires fewer lines of code compared to other programming languages like Java.
+-Provides libraries and frameworks such as Django and Flask for web development 
+and tools like Pandas, TensorFlow and Scikit-learn for artificial intelligence, 
+machine learning and data analysis.
+
+----------------Python Interpreter
+A Python Interpreter is the program that reads and executes Python code. 
+It translates your Python instructions into machine-readable form line by line, 
+so the computer can understand and run them.
